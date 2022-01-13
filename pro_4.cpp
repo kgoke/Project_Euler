@@ -10,5 +10,10 @@ using namespace std;
 
 int main()
 {
+    // find all possible products of two 3-digit numbers
+
+    // find out if the product is a palindrome
+
+    // if palindrome is greater than current update new high
     
 }
