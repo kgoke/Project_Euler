@@ -8,34 +8,44 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 using namespace std;
 
-bool isPalin(int product);
+bool ispalin(int n);
 
-int main()
-{
-    int product;        // product of two 3-digit numbers
-    int highest = 0;    // hightest palindrome
-    // find all possible products of two 3-digit numbers
-    for(int i = 100; i <= 999; i++)
-    {
-        for(int j = 100; i <= 999; j++)
-        {
-            product = i * j;            // gets product of i and j
-            if(isPalin(product))        // checks if product is a palindrome
-            {
-                if(product > highest)   // checks if product is higher than current high
-                {
-                    highest = product;  // updates current high
-                }
-            }
-        }
+int main(){
+  int n; 
+  int h = 0;
+
+  for(int i = 100; i < 1000; i++){
+      for(int j = 100; j < 1000; j++){
+          n = i * j;
+          if(ispalin(n)){
+              if(n > h)
+              {
+                  h = n;
+              }
+          }
+      }
+  }
+
+  cout << h << endl;
+   return 0;
+
+}
+
+bool ispalin(int n){
+
+    int rev = 0;
+    int rem;
+    int temp = n;
+
+    while(temp > 0){
+        rem = temp % 10;
+        temp = temp / 10;
+        rev = rev * 10 + rem;
     }
 
-    cout << highest << endl;            // prints highest palindrome
-}
-
-// check if product is a palindrome
-bool isPalin(int product)
-{
+    if(rev == n)
+    return 1;
+    else
+    return 0;
 
 }
-
