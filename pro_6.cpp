@@ -11,7 +11,6 @@ Find the difference between the sum of the squares of the first one hundred natu
 #include <iostream>
 using namespace std;
 const int num = 100;
-int getDiffSumSqr(int num);
 
 int main(){
     int s = 0, s2 = s;
@@ -19,4 +18,3 @@ int main(){
     cout << s2*s2 - s << endl;
     return 0;
 }
-
