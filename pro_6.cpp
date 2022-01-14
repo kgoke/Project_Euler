@@ -14,11 +14,9 @@ const int num = 100;
 int getDiffSumSqr(int num);
 
 int main(){
-    cout << getDiffSumSqr(num) << endl;
-    return 0;
-}
-int getDiffSumSqr(int num){
     int s = 0, s2 = s;
     for(int i = 1; i <= num; i++){s += i*i; s2+= i;}
-    return s2*s2 - s;
+    cout << s2*s2 - s << endl;
+    return 0;
 }
+
