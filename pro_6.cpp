@@ -10,23 +10,15 @@ Find the difference between the sum of the squares of the first one hundred natu
 
 #include <iostream>
 using namespace std;
-
-int getSumSquares(int num);
-int getSQuareSums(int num);
+const int num = 100;
+int getDiffSumSqr(int num);
 
 int main(){
-    int num = 100;  // test number
-    cout << getSQuareSums(num) - getSumSquares(num) << endl;    // prints out the difference
+    cout << getDiffSumSqr(num) << endl;
     return 0;
 }
-int getSumSquares(int num){
-    int sum = 0;    // sum of squares
-    for(int i = 1; i <= num; i++){sum += i*i; } // loops until num is his adding i squares to the sum each loop
-    return sum; // retuns sum of squares
-}
-int getSQuareSums(int num){
-    int sum = 0;    // square of sums
-    for(int i = 1; i <= num; i++){sum += i;} // loops until num is hit adding i to the sum each loop
-    int sqr = sum * sum;    // squares the sum
-    return sqr; // returns the square of sums
+int getDiffSumSqr(int num){
+    int s = 0, s2 = s;
+    for(int i = 1; i <= num; i++){s += i*i; s2+= i;}
+    return s2*s2 - s;
 }
